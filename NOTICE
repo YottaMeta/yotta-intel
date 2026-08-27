@@ -1,0 +1,11 @@
+# NOTICE — YottaMeta 品牌声明
+
+「YottaMeta」「元情」「yotta-intel」「元察」「yotta-logwatch」「元史」「yotta-logs」「元忆」「yotta-memory」以及本家族各技能名称（yotta-* 前缀）是 YottaMeta 的品牌与标识。
+
+本软件以 MIT 许可证开源，任何人均可自由使用、修改与分发。若你在其基础上制作派生作品：
+
+1. 不得继续使用 YottaMeta 或本家族名称（yotta-*、元情、元察、元史、元忆 等）作为派生作品的名称；
+2. 不得暗示派生作品由 YottaMeta 官方维护、认可或与之存在关联；
+3. 建议在派生作品中明确声明「与 YottaMeta 官方无关联」。
+
+上游来源致谢：本技能由 YottaMeta 全新实现（零依赖自研 + 中文教学），威胁情报 IOC 提取 / defang / STIX 映射方向参考开源社区 threat-intelligence / IOC-extraction 类技能思路，无上游代码。
