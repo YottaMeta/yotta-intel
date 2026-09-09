@@ -25,7 +25,7 @@
 ## 这是什么
 
 威胁情报分析经常从「一堆文本里找指标」开始：这份报告里有哪些可疑 IP？钓鱼邮件里的域名 / 链接是什么？
-样本哈希是多少、属于哪种算法？元情把这些能力打包成零依赖引擎——不需要 MISP / OpenCTI / 商业情报平台，
+样本哈希是多少、属于哪种算法？元情把这些能力打包成零依赖引擎——不需要 MISP / OpenCTI / 厂商情报平台，
 用纯 Python 标准库就能完成 IOC 提取、defang/refang、去重、归一化与格式转换。
 
 它不是任何单一平台的专属工具：它是一套与智能体无关的工具包，任何支持 Agent Skills 的智能体都能用。
@@ -99,7 +99,7 @@ python3 scripts/yotta_intel.py refang --path safe.txt
 输出示例（text）：
 
 ```
-元情 yotta-intel v0.1.1 —— IOC 提取结果
+元情 yotta-intel v0.2.0 —— IOC 提取结果
 共发现 2 个 IOC：
 
 ■ IPv4 地址（ipv4）

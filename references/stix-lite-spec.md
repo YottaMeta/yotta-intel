@@ -1,6 +1,6 @@
 # STIX-lite 输出规范
 
-> 元情 yotta-intel v0.1.1：`extract --format stix` 的产物说明。
+> 元情 yotta-intel v0.2.0：`extract --format stix` 的产物说明。
 > 「lite」= 只生成 STIX 2.1 的 Indicator 对象 + 自定义扩展属性，不实现完整 STIX 库。
 
 ## 1. 为什么叫 lite

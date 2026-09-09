@@ -488,7 +488,7 @@ class TestCLI(unittest.TestCase):
     def test_cli_version(self):
         r = run_cli("--version")
         self.assertEqual(r.returncode, 0)
-        self.assertIn("0.1.1", r.stdout)
+        self.assertIn("0.2.0", r.stdout)
 
     def test_cli_unknown_type_exit4(self):
         r = run_cli("extract", "--stdin", "--types", "bogus", stdin="1.2.3.4")

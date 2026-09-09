@@ -52,7 +52,7 @@ try:
 except Exception:
     pass
 
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 TOOL = "yotta-intel"
 TOOL_CN = "元情"
 

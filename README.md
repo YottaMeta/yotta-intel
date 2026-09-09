@@ -91,7 +91,7 @@ python3 scripts/yotta_intel.py refang --path safe.txt
 Sample text output:
 
 ```
-元情 yotta-intel v0.1.1 —— IOC 提取结果
+元情 yotta-intel v0.2.0 —— IOC 提取结果
 共发现 2 个 IOC：
 
 ■ IPv4 地址（ipv4）

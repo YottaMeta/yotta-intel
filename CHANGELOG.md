@@ -1,5 +1,11 @@
 # 更新日志
 
+## v0.2.0 (2026-09-09)
+
+- 评测完善批 2：新增 references/faq.md（12 条常见问题 + 速查索引 + 安装排障）；SKILL.md 增加 FAQ 速查节。
+- 安装器错误处理：用法/目标/安装错误统一退出码与修复建议；新增 test/install.test.js。
+- package.json 补 npm test 脚本；版本对齐 0.2.0（package / SKILL / CHANGELOG / CLI）。
+
 ## v0.1.1 (2026-08-29)
 
 - 安装方式统一为四方式（对齐发布规范 §3.3.1）：方式一 `npx -y @yottameta/yotta-intel --agent <name>` / `--dir <dir>`（推荐，走 npm 源）；方式二 `git clone https://github.com/YottaMeta/yotta-intel.git`；方式三 GitHub Download ZIP；方式四 `bash install.sh --agent/--dir/--list`。移除 `npx skills` 与 `-g` 推荐；中英双 README 安装节同步。

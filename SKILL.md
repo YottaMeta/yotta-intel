@@ -1,6 +1,6 @@
 ---
 name: yotta-intel
-version: 0.1.1
+version: 0.2.0
 description: 元情 —— 跨智能体的威胁情报 IOC 提取与规范化技能：零依赖自研从文本 / 日志 / 报告中提取 IP（IPv4/IPv6）、域名、URL、邮箱、哈希（MD5/SHA1/SHA256/SHA512）与 CVE 编号，识别并还原 defang 写法，去重、归一化后输出 CSV / JSON / STIX-lite。触发：用户给出含可疑 IP / 域名 / URL / 哈希的威胁情报文本、恶意样本分析报告、钓鱼邮件或日志，要提取 IOC、规范化、去重、转格式、共享情报时。边界：纯本地离线提取与规范化；不联网查证、不下载样本、不主动扫描任何系统；仅用于已获授权 / 自有资产 / 教学环境的安全分析。
 license: MIT
 ---
@@ -109,6 +109,10 @@ defang / refang 成功均为 **0**。
 - references/ioc-spec.md — IOC 类型与判定规则（归一化 / 误报控制 / 已知取舍）
 - references/defang-rules.md — defang / refang 规则与安全共享建议
 - references/stix-lite-spec.md — STIX-lite 输出规范与 pattern 映射
+
+## 常见问题（速查）
+
+装不上、提取为空、defang 没还原、退出码看不懂时，先看 references/faq.md（含速查索引与安装排障）。
 
 ## 法律声明
 

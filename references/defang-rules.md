@@ -1,6 +1,6 @@
 # defang / refang 规则与共享建议
 
-> 元情 yotta-intel v0.1.1：去活性（defang）写法识别、还原与安全共享指引。
+> 元情 yotta-intel v0.2.0：去活性（defang）写法识别、还原与安全共享指引。
 
 ## 1. 为什么要 defang
 
