@@ -99,7 +99,7 @@ python3 scripts/yotta_intel.py refang --path safe.txt
 输出示例（text）：
 
 ```
-元情 yotta-intel v0.2.0 —— IOC 提取结果
+元情 yotta-intel v0.2.1 —— IOC 提取结果
 共发现 2 个 IOC：
 
 ■ IPv4 地址（ipv4）
@@ -116,8 +116,8 @@ python3 scripts/yotta_intel.py refang --path safe.txt
 
 ```text
 # 可选国内加速：npm config set registry https://registry.npmmirror.com
-npx -y @yottameta/yotta-intel --agent <智能体名称>      # 装到指定智能体默认用户级技能目录
-npx -y @yottameta/yotta-intel --dir <智能体的技能目录>  # 指到技能目录本身（如 ~/.codex/skills）
+npx -y @yottameta/yotta-intel@0.2.1 --agent <智能体名称>      # 装到指定智能体默认用户级技能目录
+npx -y @yottameta/yotta-intel@0.2.1 --dir <智能体的技能目录>  # 指到技能目录本身（如 ~/.codex/skills）
 ```
 
 - `--agent <name>` 自动装到该智能体默认用户级目录；`--list` 可查看各智能体默认目录。

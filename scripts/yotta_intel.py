@@ -52,7 +52,7 @@ try:
 except Exception:
     pass
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 TOOL = "yotta-intel"
 TOOL_CN = "元情"
 
@@ -188,6 +188,23 @@ URL_RE = re.compile(r"(?i)(?:(?:https?|ftp)://)[^\s<>\"'，。！？；：、（
 EMAIL_RE = re.compile(r"(?i)[a-z0-9._%+\-]+@[a-z0-9\-]+(?:\.[a-z0-9\-]+)+")
 DOMAIN_RE = re.compile(r"(?<![\w@.])(?:[\w\-]{1,63}\.)+[\w\-]{2,63}(?![\-\w])")
 IPV4_RE = re.compile(r"(?<!\d)(?:\d{1,3}\.){3}\d{1,3}(?!\d)")
+
+
+def normalize_ipv4_octets(raw):
+    """把前导零写法（010.000.000.001）归一为 10.0.0.1。
+
+    Python 3.9.5 起 ipaddress.IPv4Address 拒绝前导零八位组，旧版本接受；
+    这里先做十进制归一，保证跨版本行为一致（999.1.1.1 仍会被判非法）。
+    """
+    parts = raw.split(".")
+    if len(parts) != 4:
+        return raw
+    out = []
+    for part in parts:
+        if not part.isdigit() or len(part) > 3:
+            return raw
+        out.append(str(int(part)))
+    return ".".join(out)
 IPV6_TOKEN_RE = re.compile(r"(?i)(?<![\w:])(?:[0-9a-f:.]{2,45})(?![\w:])")
 HASH_RE = re.compile(r"(?i)(?<![0-9a-f])[0-9a-f]{32,128}(?![0-9a-f])")
 CVE_RE = re.compile(r"(?i)\bcve-\d{4}-\d{4,7}\b")
@@ -287,7 +304,7 @@ def find_iocs_in_line(line):
     for m in IPV4_RE.finditer(line):
         raw = m.group(0)
         try:
-            ip = ipaddress.IPv4Address(raw)
+            ip = ipaddress.IPv4Address(normalize_ipv4_octets(raw))
         except ValueError:
             continue
         found.append((m.start(), m.end(), "ipv4", str(ip)))

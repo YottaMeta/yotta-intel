@@ -91,7 +91,7 @@ python3 scripts/yotta_intel.py refang --path safe.txt
 Sample text output:
 
 ```
-元情 yotta-intel v0.2.0 —— IOC 提取结果
+元情 yotta-intel v0.2.1 —— IOC 提取结果
 共发现 2 个 IOC：
 
 ■ IPv4 地址（ipv4）
@@ -108,8 +108,8 @@ Pick any of the four methods below; the order is the recommended priority. Skill
 
 ```text
 # Optional China mirror: npm config set registry https://registry.npmmirror.com
-npx -y @yottameta/yotta-intel --agent <agent-name>      # install to the agent's default user-level skills dir
-npx -y @yottameta/yotta-intel --dir <your-skills-dir>   # point to the skills dir itself (e.g. ~/.codex/skills)
+npx -y @yottameta/yotta-intel@0.2.1 --agent <agent-name>      # install to the agent's default user-level skills dir
+npx -y @yottameta/yotta-intel@0.2.1 --dir <your-skills-dir>   # point to the skills dir itself (e.g. ~/.codex/skills)
 ```
 
 - `--agent <name>` installs to that agent's default user-level directory; `--list` shows each agent's default directory.
