@@ -205,6 +205,17 @@ def normalize_ipv4_octets(raw):
             return raw
         out.append(str(int(part)))
     return ".".join(out)
+
+
+def canonical_ipv6(ip6):
+    """Return one stable IPv6 spelling across Python patch versions."""
+    mapped = ip6.ipv4_mapped
+    if mapped is not None:
+        value = int(mapped)
+        return "::ffff:%x:%x" % ((value >> 16) & 0xFFFF, value & 0xFFFF)
+    return ip6.compressed
+
+
 IPV6_TOKEN_RE = re.compile(r"(?i)(?<![\w:])(?:[0-9a-f:.]{2,45})(?![\w:])")
 HASH_RE = re.compile(r"(?i)(?<![0-9a-f])[0-9a-f]{32,128}(?![0-9a-f])")
 CVE_RE = re.compile(r"(?i)\bcve-\d{4}-\d{4,7}\b")
@@ -317,7 +328,7 @@ def find_iocs_in_line(line):
                 ip6 = ipaddress.IPv6Address(cand)
             except ValueError:
                 continue
-            found.append((m.start(), m.start() + len(cand), "ipv6", str(ip6)))
+            found.append((m.start(), m.start() + len(cand), "ipv6", canonical_ipv6(ip6)))
             break
     for m in DOMAIN_RE.finditer(line):
         d = norm_domain(m.group(0))
